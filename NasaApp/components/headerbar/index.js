@@ -14,10 +14,11 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
-    height: 50,
+    maxHeight: 50,
     width: '100%',
     backgroundColor: '#696969',
     alignItems: 'center',
+    marginTop: 40,
   },
   title: {
     width: '100%',
