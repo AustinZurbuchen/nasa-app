@@ -6,6 +6,7 @@ const HeaderBar = () => (
   <View style={styles.headerbar}>
     <Menu />
     <Text style={styles.title}>Home</Text>
+    <Menu isInvisible={true} />
   </View>
 );
 
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   title: {
-    width: '100%',
+    flex: 1,
     margin: 'auto',
     lineHeight: 24,
     fontSize: 24,

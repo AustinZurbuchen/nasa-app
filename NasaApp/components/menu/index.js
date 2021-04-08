@@ -1,29 +1,28 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import {View, StyleSheet, TouchableOpacity} from 'react-native';
 
-const Menu = () => (
-  <View style={styles.menu}>
-    <View style={styles.bar} />
-    <View style={styles.bar} />
-    <View style={styles.bar} />
-  </View>
-);
+const Menu = ({isInvisible}) => {
+  return (
+    <View style={styles.menu}>
+      {!isInvisible && (
+        <TouchableOpacity onPress={() => console.log('touch')}>
+          <Icon name="bars" size={30} color="#C0C0C0" />
+        </TouchableOpacity>
+      )}
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   menu: {
-    flex: 1,
+    flex: 0,
     flexDirection: 'column',
     justifyContent: 'center',
+    alignItems: 'center',
     height: 50,
     width: 50,
-  },
-  bar: {
-    height: 5,
-    width: 30,
-    backgroundColor: '#C0C0C0',
-    marginLeft: 10,
-    marginBottom: 3,
-    marginTop: 3,
+    backgroundColor: '#696969',
   },
 });
 export default Menu;

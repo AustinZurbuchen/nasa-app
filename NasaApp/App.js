@@ -1,17 +1,28 @@
 import React from 'react';
+import {Provider} from 'react-redux';
+import {createStore, applyMiddleware, compose} from 'redux';
 import {View, StyleSheet} from 'react-native';
-import {getRandomPhotoUrl} from './api/nasaApi';
+import thunk from 'redux-thunk';
+import reducers from './reducers';
 import HeaderBar from './components/headerbar';
 import Photo from './components/photo';
+import PhotoList from './components/photolist';
 
-function App() {
-  const uri = getRandomPhotoUrl();
-  return (
-    <View style={styles.app}>
-      <HeaderBar />
-      <Photo uri={uri} />
-    </View>
-  );
+const composeEnhancers = compose;
+const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
+
+class App extends React.Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <View style={styles.app}>
+          <HeaderBar />
+          <Photo />
+          <PhotoList />
+        </View>
+      </Provider>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
