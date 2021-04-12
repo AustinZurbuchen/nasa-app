@@ -16,6 +16,7 @@ export const getRandomPhotoUrl = () => dispatch => {
         url: '',
       };
 
+      dispatch(updatePhoto(photoData));
       axios
         .get(nasaUrl + randomQuery + mediaType)
         .then(response => {
@@ -46,22 +47,24 @@ export const getListOfPhotoUrls = keyword => dispatch => {
         urls: [],
       };
 
+      dispatch(updatePhotoList(photoListData));
       axios
         .get(nasaUrl + query + mediaType)
         .then(response => {
           let photos = response.data.collection.items;
-          console.log(photos);
-          photoListData.urls = photos;
+          let photoUrls = [];
+          for (let photo of photos) {
+            photoUrls.push(photo.links[0]);
+          }
+          photoListData.urls = photoUrls;
           photoListData.isLoading = false;
-          console.log(photoListData);
-          // dispatch(updatePhotoList(photoListData));
+          dispatch(updatePhotoList(photoListData));
           resolve(true);
         })
         .catch(e => {
           console.log(e);
           resolve(false);
         });
-      console.log('getListOfPhotoUrls');
       resolve(true);
     } catch (e) {
       console.log(e);

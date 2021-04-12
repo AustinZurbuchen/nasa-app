@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import reducers from './reducers';
 import HeaderBar from './components/headerbar';
 import Photo from './components/photo';
-import PhotoList from './components/photolist';
+import PhotoContainer from './components/photoContainer';
 
 const composeEnhancers = compose;
 const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
@@ -18,7 +18,7 @@ class App extends React.Component {
         <View style={styles.app}>
           <HeaderBar />
           <Photo />
-          <PhotoList />
+          <PhotoContainer />
         </View>
       </Provider>
     );

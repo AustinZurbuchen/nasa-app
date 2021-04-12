@@ -21,7 +21,6 @@ class Photo extends React.Component {
     return (
       <View style={styles.photo}>
         <Text style={styles.title}>Featured Photo</Text>
-
         {this.props.photo.photo.isLoading ? (
           <ActivityIndicator style={styles.loading} />
         ) : (
