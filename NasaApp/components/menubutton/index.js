@@ -2,7 +2,7 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
 
-const Menu = ({isInvisible}) => {
+const MenuButton = ({isInvisible}) => {
   return (
     <View style={styles.menu}>
       {!isInvisible && (
@@ -25,4 +25,4 @@ const styles = StyleSheet.create({
     backgroundColor: '#696969',
   },
 });
-export default Menu;
+export default MenuButton;

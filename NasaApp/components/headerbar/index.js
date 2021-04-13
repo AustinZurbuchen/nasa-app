@@ -1,12 +1,12 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import Menu from '../menu';
+import MenuButton from '../menubutton';
 
 const HeaderBar = () => (
   <View style={styles.headerbar}>
-    <Menu />
+    <MenuButton />
     <Text style={styles.title}>Home</Text>
-    <Menu isInvisible={true} />
+    <MenuButton isInvisible={true} />
   </View>
 );
 
