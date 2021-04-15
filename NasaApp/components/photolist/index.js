@@ -60,7 +60,6 @@ class PhotoList extends React.Component {
           style={{
             width: 20,
             height: '100%',
-            backgroundColor: '#696969',
           }}
         />
       );

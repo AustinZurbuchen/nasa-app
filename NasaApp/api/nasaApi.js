@@ -11,6 +11,7 @@ export const getRandomPhotoUrl = () => dispatch => {
     try {
       const randomQuery =
         '?keywords=' + util.getRandomKeyword().replace(/\s/g, '+');
+      console.log(randomQuery);
       let photoData = {
         isLoading: true,
         url: '',

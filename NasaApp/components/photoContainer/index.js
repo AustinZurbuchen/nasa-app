@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     marginTop: 30,
     maxHeight: '30%',
-    backgroundColor: '#696969',
+    backgroundColor: '#0c3d91',
   },
   title: {
     justifyContent: 'center',
@@ -33,7 +33,8 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     fontSize: 24,
     marginLeft: 10,
-    marginTop: 10,
+    marginTop: 20,
+    color: '#C0C0C0',
   },
 });
 export default PhotoContainer;

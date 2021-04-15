@@ -2,10 +2,10 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import MenuButton from '../menubutton';
 
-const HeaderBar = () => (
+const HeaderBar = ({title, screenName}) => (
   <View style={styles.headerbar}>
-    <MenuButton />
-    <Text style={styles.title}>Home</Text>
+    <MenuButton screenName={screenName} />
+    <Text style={styles.title}>{title}</Text>
     <MenuButton isInvisible={true} />
   </View>
 );
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     maxHeight: 50,
     width: '100%',
-    backgroundColor: '#696969',
+    backgroundColor: '#0c3d91',
     alignItems: 'center',
     marginTop: 40,
   },
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     fontSize: 24,
     textAlign: 'center',
-    color: 'black',
+    color: '#C0C0C0',
   },
 });
 export default HeaderBar;
